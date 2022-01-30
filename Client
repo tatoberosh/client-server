@@ -39,7 +39,7 @@ namespace ClientApp
  
         private static void SendMessage(NetworkStream stream)
         {
-            Console.WriteLine("Что отправить?");
+            Console.WriteLine("What should I send?");
             var bytes = Encoding.UTF8.GetBytes(Console.ReadLine());
             stream.Write(bytes, 0, bytes.Length);
         }
@@ -55,7 +55,7 @@ namespace ClientApp
                 isReading = stream.DataAvailable;
             }
  
-            Console.WriteLine($"Получено от сервера: {response}");
+            Console.WriteLine($"Received from Server: {response}");
             return response.ToString();
         }
     }
